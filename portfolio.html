@@ -321,10 +321,58 @@
     <h1 class="hero-name font-display">Shaik <span class="gradient-text">Razak</span></h1>
     <div class="hero-typing"><span id="typingText"></span><span class="cursor">|</span></div>
     <p class="hero-desc">Passionate about building elegant, scalable web applications with modern technologies. Turning ideas into impactful digital experiences.</p>
-    <div class="hero-btns">
-      <a href="#projects" class="btn-primary hover-lift">View Projects <i class="fas fa-arrow-down"></i></a>
-      <a href="#contact" class="btn-glass glass hover-lift">Contact Me</a>
+   <div class="hero-btns">
+  <a href="#projects" class="btn-primary hover-lift">
+    View Projects <i class="fas fa-arrow-down"></i>
+  </a>
+<button class="btn-glass glass hover-lift" onclick="openResume()">
+  View Resume <i class="fas fa-file"></i>
+</button>
+<!-- Resume Popup -->
+<div id="resumeModal" style="
+  display:none;
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,0.8);
+  z-index:999;
+  justify-content:center;
+  align-items:center;
+">
+
+  <div style="
+    width:80%;
+    height:85%;
+    background:#111;
+    border-radius:10px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+  ">
+
+    <!-- Top Bar -->
+    <div style="
+      display:flex;
+      justify-content:space-between;
+      padding:10px 15px;
+      background:#222;
+    ">
+      <a href="resume.pdf" download="Shaik_Razak_Resume.pdf" class="download-btn">
+  ⬇ Download Resume
+</a>
+
+      <span onclick="closeResume()" style="cursor:pointer;color:white;font-size:20px;">
+        ✖
+      </span>
     </div>
+
+    <!-- PDF Preview -->
+    <iframe src="resume.pdf" style="width:100%;height:100%;border:none;"></iframe>
+
+  </div>
+</div>
+
+</div>
     <div class="social-links">
       <a href="https://github.com/Shaik-Razak872" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
       <a href="https://www.linkedin.com/in/shaik-razak-710286314/" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
@@ -656,6 +704,13 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     this.reset();
   }
 });
+function openResume() {
+  document.getElementById("resumeModal").style.display = "flex";
+}
+
+function closeResume() {
+  document.getElementById("resumeModal").style.display = "none";
+}
 </script>
 </body>
 </html>
