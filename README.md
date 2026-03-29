@@ -33,8 +33,8 @@ Portfolio
 ## ⚙️ Installation
 
 ```bash
-git clone https://github.com/Shaik-Razak872/your-portfolio-repo.git
-cd your-portfolio-repo
+git clone https://github.com/Shaik-Razak872/portfolio.git
+cd portfolio
 open index.html
 ```
 
